@@ -6,7 +6,9 @@ package modelo;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,30 +91,211 @@ public class Producto extends ConexionBD implements CRUDinterface {
     
     
     
-    
+    //Metodos CRUD
     @Override
     public boolean insertar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
+
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_insertar_PuntoVenta(?, ?, ?, ?, ?);");
+                this.cstmt.setInt(1, this.idProducto);
+                this.cstmt.setString(2, this.NombreProducto);
+                this.cstmt.setInt(3, this.Precio);
+                this.cstmt.setInt(4, this.cantidad);
+                this.cstmt.setString(5, this.Categotria);
+                
+
+                //ejecutar el procedimiento almacenado
+                this.cstmt.execute();
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+
+                return true;
+            } catch (SQLException ex) {
+                super.setMensajes("Error sql: " + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return false;
+
     }
 
     @Override
-    public ArrayList buscar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ArrayList<Producto>  buscar() {
+        ArrayList<Producto> listaProducto = new ArrayList<>();
+
+        if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
+
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscarId_PuntoVenta();");
+
+                //ejecutar consulta
+                this.result = this.cstmt.executeQuery();
+
+                while (this.result.next()) {
+
+                    Producto producto = new Producto();
+
+                    producto.idProducto = this.result.getInt(1);
+                    producto.NombreProducto = this.result.getString(2);
+                    producto.Precio = this.result.getInt(3);
+                    producto.cantidad = this.result.getInt(4);
+                    producto.Categotria = this.result.getString(5);
+
+
+                    //agregar el objeto usuario a la lista 
+                    listaProducto.add(producto);
+
+                }
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+
+            } catch (SQLException ex) {
+                super.setMensajes(null + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return listaProducto;
+
     }
 
     @Override
     public boolean buscarPorId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+          this.idProducto = id;
+        
+        if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
+
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscarId_PuntoVenta(?);");
+                this.cstmt.setInt(1, this.idProducto);
+
+                //ejecutar consulta
+                this.result = this.cstmt.executeQuery();
+                
+                while (this.result.next()) {
+                    this.idProducto = this.result.getInt(1);
+                    this.NombreProducto = this.result.getString(2);
+                    this.Precio = this.result.getInt(3);
+                    this.cantidad = this.result.getInt(4);
+                    this.Categotria = this.result.getString(5);
+                    
+                    
+                    
+                }
+
+               
+                this.cstmt.execute();
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+
+                return true;
+                
+            } catch (SQLException ex) {
+                super.setMensajes(null + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return false;
     }
 
     @Override
     public boolean modificar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         
+         this.idProducto=id;
+        if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
+
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_actualizar_PuntoVenta(?, ?, ?, ?, ?);");
+                this.cstmt.setInt(1, this.idProducto);
+                this.cstmt.setString(2, this.NombreProducto);
+                this.cstmt.setInt(3, this.Precio);
+                this.cstmt.setInt(4, this.cantidad);
+                this.cstmt.setString(5, this.Categotria);                
+
+                //ejecutar el procedimiento almacenado
+                this.cstmt.execute();
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+
+                return true;
+            } catch (SQLException ex) {
+                super.setMensajes("Error sql: " + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return false; 
+
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                
+            this.idProducto=id;
+
+        
+        if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
+
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_eliminar_PuntoVenta(?);");
+                 this.cstmt.setInt(1, this.idProducto);
+                this.cstmt.setString(2, this.NombreProducto);
+                this.cstmt.setInt(3, this.Precio);
+                this.cstmt.setInt(4, this.cantidad);
+                this.cstmt.setString(5, this.Categotria);   
+
+                //ejecutar el procedimiento almacenado
+                this.cstmt.execute();
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+
+                return true;
+            } catch (SQLException ex) {
+                super.setMensajes("Error sql: " + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return false;
     }
     
 

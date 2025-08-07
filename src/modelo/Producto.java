@@ -79,6 +79,13 @@ public class Producto extends ConexionBD implements CRUDinterface {
     }
 
     
+    //metodo String
+
+    @Override
+    public String toString() {
+        return "Producto{" + "idProducto=" + idProducto + ", NombreProducto=" + NombreProducto + ", cantidad=" + cantidad + ", Categotria=" + Categotria + ", Precio=" + Precio + '}';
+    }
+    
     
     
     

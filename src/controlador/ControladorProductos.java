@@ -4,10 +4,16 @@
  */
 package controlador;
 
+import modelo.Producto;
+
 /**
  *
  * @author kevin
  */
 public class ControladorProductos {
+    //Atributos
+    private Producto modelo;
+    
+    
     
 }

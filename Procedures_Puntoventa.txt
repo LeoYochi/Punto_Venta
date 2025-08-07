@@ -1,0 +1,15 @@
+Insertar a la tabla PuntoVenta
+call BaseDeMySQL.sp_insertar_PuntoVenta(?, ?, ?, ?, ?);
+
+Actualizar tabla PuntoVenta
+call BaseDeMySQL.sp_actualizar_PuntoVenta(?, ?, ?, ?, ?);
+
+Buscar por ID la tabla PuntoVenta
+call BaseDeMySQL.sp_buscarId_PuntoVenta(?);
+
+Buscar la tabla PuntoVenta
+call BaseDeMySQL.sp_buscar_PuntoVenta();
+
+Eliminar por ID en la tabla PuntoVenta
+call BaseDeMySQL.sp_eliminar_PuntoVenta(?);
+

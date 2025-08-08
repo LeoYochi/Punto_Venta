@@ -40,15 +40,15 @@ public class ControladorVistaLogin {
         //Entrada de datos
         String user=this.vista.txtUsuario.getText();
         String password=String.valueOf(this.vista.txtpassword.getPassword());
-        String tipoUser="student";
+        //String tipoUser="student";
         
         this.modelo.getUsuario().setNombreUsuario(user);
         this.modelo.setPasswordLogin(password);
-        this.modelo.getRolUsuario().setTipoRolUsuario(tipoUser);
+        //this.modelo.getRolUsuario().setTipoRolUsuario(tipoUser);
         
         //Validar login
-        if(this.modelo.validarLogin()) {
-            JOptionPane.showMessageDialog(vista, "Usuario y/o Password correctos");
+        if(this.modelo.validarLogin() && this.modelo.getRolUsuario().getTipoRolUsuario().equals("admin")) {
+            //JOptionPane.showMessageDialog(vista, "Usuario y/o Password correctos");
             //Crear objeto de la vista DashBoardAdmin
             ControladorDashBoardAdmin vistaDashBoardAdmin =new ControladorDashBoardAdmin();
             vistaDashBoardAdmin.getVista().setVisible(true);
@@ -56,9 +56,18 @@ public class ControladorVistaLogin {
             
             //Ocultar la vista de Login
             this.vista.dispose();
-        }else{
+        }else if(this.modelo.validarLogin() && this.modelo.getRolUsuario().getTipoRolUsuario().equals("cajero")){
+            //JOptionPane.showMessageDialog(vista, "Usuario y/o Password incorrectos");
+ //Crear objeto de la vista DashBoardAdmin
+            ControladorDashBoardAdmin vistaDashBoardAdmin =new ControladorDashBoardAdmin();
+            vistaDashBoardAdmin.getVista().setVisible(true);
+            vistaDashBoardAdmin.getVista().setLocationRelativeTo(null);
+            
+            //Ocultar la vista de Login
+            this.vista.dispose();
+        }
+        else{
             JOptionPane.showMessageDialog(vista, "Usuario y/o Password incorrectos");
-
         }
         
         

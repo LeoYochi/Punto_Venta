@@ -4,13 +4,17 @@
  */
 package modelo;
 
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author leoyochi
  */
-public class Login {
+public class Login extends ConexionBD{
     //Atributos
     private int idlogin;
     private String nombreLogin;
@@ -21,6 +25,9 @@ public class Login {
     //Declarar objetos usuario y rolUsuario
     private Usuario usuario;
     private RolUsuario rolUsuario;
+    
+     private CallableStatement cstmt;
+    private ResultSet result;
     
     //Constructor
     
@@ -107,19 +114,48 @@ public class Login {
         
 //Metodo para validar el inicio de sesion
 public boolean validarLogin(){
-//Variables para el usuuario, password y tipo usuario
-String nameUser="Leonardo";
-String passwordUser="123";
-String typeUser="student";
+    if (super.openConexionBD()) {
+            try {
+                //JOptionPane.showMessageDialog(null, super.getMensajes());
 
-if ((nameUser.equals(this.usuario.getNombreUsuario())) && (passwordUser.equals(this.passwordLogin)) && (typeUser.equals(this.rolUsuario.getTipoRolUsuario()))) {
+                //Llamar el procedimiento alamacenado
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscarId_PuntoVenta(?);");
+                this.cstmt.setString(1, this.getUsuario().getNombreUsuario());
+                this.cstmt.setString(2, this.getPasswordLogin());
+                //ejecutar consulta
+                this.result = this.cstmt.executeQuery();
+                
+                boolean existeUsuario = false;
 
-return true;
+                while (this.result.next()) {
+                    existeUsuario = true;
+                    //agregar los datos de la consulta a los atributos del rol usuario
+                    this.getRolUsuario().setTipoRolUsuario(this.result.getString("TipoRolUsuario"));
+                    
 
-}else{
-    
-    return false;
-}
+                }
+
+                //this.cstmt.execute();
+
+                //Cerrar conexion a la BD
+                this.cstmt.close();
+                super.getConexion().close();
+                if(existeUsuario){
+                    super.setMensajes("Si existe el usuario");
+                    return true;
+                }else{
+                    super.setMensajes("NO Existe el usuario");
+                }
+            } catch (SQLException ex) {
+                super.setMensajes(null + ex.getMessage());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, super.getMensajes());
+
+        }
+
+        return false;
 }
 }
 

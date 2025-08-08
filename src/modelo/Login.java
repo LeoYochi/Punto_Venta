@@ -119,7 +119,7 @@ public boolean validarLogin(){
                 //JOptionPane.showMessageDialog(null, super.getMensajes());
 
                 //Llamar el procedimiento alamacenado
-                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscarId_PuntoVenta(?);");
+                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_validar_login(?,?);");
                 this.cstmt.setString(1, this.getUsuario().getNombreUsuario());
                 this.cstmt.setString(2, this.getPasswordLogin());
                 //ejecutar consulta

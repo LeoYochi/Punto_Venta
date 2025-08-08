@@ -31,6 +31,7 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnUsuarios = new javax.swing.JButton();
         btnRolUsuarios = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
         panelEncabezado = new javax.swing.JPanel();
         panelContenedor = new javax.swing.JPanel();
 
@@ -63,6 +64,17 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
         btnRolUsuarios.setText("Rol Usuarios");
         btnRolUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        btnProductos.setBackground(new java.awt.Color(255, 204, 102));
+        btnProductos.setFont(new java.awt.Font("Cantarell", 1, 13)); // NOI18N
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/wishlist_product_list_order_cart_icon_225112.png"))); // NOI18N
+        btnProductos.setText("Productos");
+        btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
@@ -77,7 +89,8 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                            .addComponent(btnRolUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                            .addComponent(btnRolUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                            .addComponent(btnProductos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
                         .addGap(21, 21, 21))))
         );
         panelMenuLayout.setVerticalGroup(
@@ -91,7 +104,9 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
                 .addComponent(btnUsuarios)
                 .addGap(18, 18, 18)
                 .addComponent(btnRolUsuarios)
-                .addContainerGap(402, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnProductos)
+                .addContainerGap(346, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -121,6 +136,10 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProductosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +177,7 @@ public class VistaDashBoardAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnProductos;
     public javax.swing.JButton btnRolUsuarios;
     public javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel jLabel1;

@@ -39,8 +39,10 @@ public class ControladorDashBoardAdmin {
     //Metodo para el manejador de eventos
     public void manejadorEventos() {
         //Evento para el boton de usuarios
-        this.vista.btnUsuarios.addActionListener(e->mostrarPanelUsuarios());
-        this.vista.btnRolUsuarios.addActionListener(e->mostrarPanelRolUsuarios());
+        this.vista.btnUsuarios.addActionListener(e -> mostrarPanelUsuarios());
+        this.vista.btnRolUsuarios.addActionListener(e -> mostrarPanelRolUsuarios());
+        this.vista.btnProductos.addActionListener(e -> mostrarPanelProductos());
+
         
     }
     
@@ -76,6 +78,20 @@ public class ControladorDashBoardAdmin {
         this.vista.panelContenedor.repaint();
        
         
+    }
+    
+    public void mostrarPanelProductos() {
+          //Crear el objeto del controlador del panel Productos
+        ControladorProductos controladorProductos=new ControladorProductos();
+        
+        controladorProductos.getVista().setSize(800,560);
+        controladorProductos.getVista().setLocation(0,0);
+        
+        //Agregar el panel Productos al panel contenedor
+        this.vista.panelContenedor.removeAll();
+        this.vista.panelContenedor.add(controladorProductos.getVista());
+        this.vista.panelContenedor.revalidate();
+        this.vista.panelContenedor.repaint();
     }
     
     //Metodo main

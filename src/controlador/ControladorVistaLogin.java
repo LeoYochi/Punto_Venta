@@ -47,7 +47,7 @@ public class ControladorVistaLogin {
         //this.modelo.getRolUsuario().setTipoRolUsuario(tipoUser);
         
         //Validar login
-        if(this.modelo.validarLogin() && this.modelo.getRolUsuario().getTipoRolUsuario().equals("admin")) {
+        if(this.modelo.validarLogin() && this.modelo.getRolUsuario().getTipoRolUsuario().equals("adminn")) {
             //JOptionPane.showMessageDialog(vista, "Usuario y/o Password correctos");
             //Crear objeto de la vista DashBoardAdmin
             ControladorDashBoardAdmin vistaDashBoardAdmin =new ControladorDashBoardAdmin();

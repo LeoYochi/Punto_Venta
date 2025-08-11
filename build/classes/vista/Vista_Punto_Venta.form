@@ -62,11 +62,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="290" y="20" width="-1" height="-1"/>
-=======
-              <AbsoluteConstraints x="280" y="20" width="-1" height="-1"/>
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
             </Constraint>
           </Constraints>
         </Component>
@@ -245,27 +241,18 @@
             </Constraint>
           </Constraints>
         </Component>
-<<<<<<< HEAD
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-=======
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="30" y="130" width="400" height="320"/>
-=======
-              <AbsoluteConstraints x="30" y="120" width="390" height="360"/>
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
             </Constraint>
           </Constraints>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-<<<<<<< HEAD
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
@@ -274,16 +261,6 @@
                     <Column editable="true" title="Cantidad" type="java.lang.Integer"/>
                     <Column editable="true" title="Precio" type="java.lang.String"/>
                     <Column editable="true" title="Total" type="java.lang.String"/>
-=======
-            <Component class="javax.swing.JTable" name="TablaProducto">
-              <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Nombre del Producto" type="java.lang.String"/>
-                    <Column editable="true" title="Precio" type="java.lang.Integer"/>
-                    <Column editable="true" title="Cantidad" type="java.lang.Integer"/>
-                    <Column editable="true" title="Categoria" type="java.lang.String"/>
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -314,12 +291,6 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
-<<<<<<< HEAD
-=======
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
             </Component>
           </SubComponents>
         </Container>

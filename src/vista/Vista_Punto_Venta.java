@@ -40,8 +40,13 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtid1 = new javax.swing.JTextField();
         txtid2 = new javax.swing.JTextField();
         txtid3 = new javax.swing.JTextField();
+<<<<<<< HEAD
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+=======
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaProducto = new javax.swing.JTable();
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,7 +58,11 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtPuntodeVenta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtPuntodeVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Punto venta.png"))); // NOI18N
         txtPuntodeVenta.setText("Punto de Venta ");
+<<<<<<< HEAD
         Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+=======
+        Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
 
         btnNuevo.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -120,7 +129,11 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         });
         Panel_Punto_Venta.add(txtid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
 
+<<<<<<< HEAD
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
+=======
+        TablaProducto.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -128,20 +141,34 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
+<<<<<<< HEAD
                 "Nombre", "Cantidad", "Precio", "Total"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+=======
+                "Nombre del Producto", "Precio", "Cantidad", "Categoria"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+<<<<<<< HEAD
         jScrollPane2.setViewportView(jTable1);
 
         Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
+=======
+        jScrollPane1.setViewportView(TablaProducto);
+
+        Panel_Punto_Venta.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 390, 360));
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
 
         getContentPane().add(Panel_Punto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -195,10 +222,17 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel Panel_Punto_Venta;
+<<<<<<< HEAD
     public javax.swing.JButton btnGenerarVenta;
     public javax.swing.JButton btnNuevo;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+=======
+    public javax.swing.JTable TablaProducto;
+    public javax.swing.JButton btnGenerarVenta;
+    public javax.swing.JButton btnNuevo;
+    private javax.swing.JScrollPane jScrollPane1;
+>>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
     public javax.swing.JLabel txtIdProducto1;
     public javax.swing.JLabel txtPuntodeVenta;
     public javax.swing.JLabel txtTotal;

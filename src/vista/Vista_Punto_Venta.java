@@ -53,7 +53,11 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtPuntodeVenta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtPuntodeVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Punto venta.png"))); // NOI18N
         txtPuntodeVenta.setText("Punto de Venta ");
+<<<<<<< HEAD
         Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+=======
+        Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+>>>>>>> 507bdc6 (vista)
 
         btnNuevo.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

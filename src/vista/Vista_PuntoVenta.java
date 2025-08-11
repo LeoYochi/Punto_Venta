@@ -6,16 +6,14 @@ package vista;
 
 /**
  *
- * @author Ferra
+ * @author leoyochi
  */
-public class Vista_Punto_Venta extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Vista_Punto_Venta.class.getName());
+public class Vista_PuntoVenta extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vista_Punto_Venta
+     * Creates new form Vista_PuntoVenta
      */
-    public Vista_Punto_Venta() {
+    public Vista_PuntoVenta() {
         initComponents();
     }
 
@@ -40,21 +38,10 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtid1 = new javax.swing.JTextField();
         txtid2 = new javax.swing.JTextField();
         txtid3 = new javax.swing.JTextField();
-<<<<<<< HEAD
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-=======
-<<<<<<< HEAD
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-=======
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TablaProducto = new javax.swing.JTable();
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Punto_Venta.setBackground(new java.awt.Color(51, 204, 255));
         Panel_Punto_Venta.setPreferredSize(new java.awt.Dimension(780, 470));
@@ -63,15 +50,7 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtPuntodeVenta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtPuntodeVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Punto venta.png"))); // NOI18N
         txtPuntodeVenta.setText("Punto de Venta ");
-<<<<<<< HEAD
         Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
-=======
-<<<<<<< HEAD
-        Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
-=======
-        Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
 
         btnNuevo.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -138,15 +117,7 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         });
         Panel_Punto_Venta.add(txtid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
 
-<<<<<<< HEAD
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-=======
-<<<<<<< HEAD
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-=======
-        TablaProducto.setModel(new javax.swing.table.DefaultTableModel(
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -154,48 +125,41 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
                 "Nombre", "Cantidad", "Precio", "Total"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-<<<<<<< HEAD
-=======
-=======
-                "Nombre del Producto", "Precio", "Cantidad", "Categoria"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-<<<<<<< HEAD
         jScrollPane2.setViewportView(jTable1);
 
         Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
-=======
-<<<<<<< HEAD
-        jScrollPane2.setViewportView(jTable1);
 
-        Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
-=======
-        jScrollPane1.setViewportView(TablaProducto);
-
-        Panel_Punto_Venta.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 390, 360));
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
-
-        getContentPane().add(Panel_Punto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 780, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,34 +200,31 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Vista_PuntoVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Vista_PuntoVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Vista_PuntoVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Vista_PuntoVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Vista_Punto_Venta().setVisible(true));
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Vista_PuntoVenta().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel Panel_Punto_Venta;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
     public javax.swing.JButton btnGenerarVenta;
     public javax.swing.JButton btnNuevo;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-<<<<<<< HEAD
-=======
-=======
-    public javax.swing.JTable TablaProducto;
-    public javax.swing.JButton btnGenerarVenta;
-    public javax.swing.JButton btnNuevo;
-    private javax.swing.JScrollPane jScrollPane1;
->>>>>>> 0938f6dd692aa8e42392010a1393f179a387951c
->>>>>>> 2af95f720fab95f5ea93fbb6cb8a5d68091cbbdf
     public javax.swing.JLabel txtIdProducto1;
     public javax.swing.JLabel txtPuntodeVenta;
     public javax.swing.JLabel txtTotal;

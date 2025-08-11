@@ -40,6 +40,7 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         txtid3 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnNuevo1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,9 +55,14 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
 
         btnNuevo.setBackground(new java.awt.Color(204, 204, 204));
         btnNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/nuevo.png"))); // NOI18N
-        btnNuevo.setText("Nuevo");
-        Panel_Punto_Venta.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, 30));
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3643762-find-glass-magnifying-search-zoom_113420.png"))); // NOI18N
+        btnNuevo.setText("Buscar");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+        Panel_Punto_Venta.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 110, 30));
 
         btnGenerarVenta.setBackground(new java.awt.Color(204, 204, 204));
         btnGenerarVenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -119,17 +125,17 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio", "Total"
+                "Nombre", "Precio", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -139,6 +145,12 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
+
+        btnNuevo1.setBackground(new java.awt.Color(204, 204, 204));
+        btnNuevo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnNuevo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/nuevo.png"))); // NOI18N
+        btnNuevo1.setText("Nuevo");
+        Panel_Punto_Venta.add(btnNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,6 +196,10 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtid3ActionPerformed
 
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +239,7 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
     public javax.swing.JPanel Panel_Punto_Venta;
     public javax.swing.JButton btnGenerarVenta;
     public javax.swing.JButton btnNuevo;
+    public javax.swing.JButton btnNuevo1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     public javax.swing.JLabel txtIdProducto1;

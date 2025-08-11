@@ -28,7 +28,7 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
 
         Panel_Punto_Venta = new javax.swing.JPanel();
         txtPuntodeVenta = new javax.swing.JLabel();
-        btnNuevo = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         btnGenerarVenta = new javax.swing.JButton();
         txtTotal = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
@@ -39,13 +39,14 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         txtid2 = new javax.swing.JTextField();
         txtid3 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaPuntoVenta = new javax.swing.JTable();
         btnNuevo1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Panel_Punto_Venta.setBackground(new java.awt.Color(0, 153, 153));
-        Panel_Punto_Venta.setPreferredSize(new java.awt.Dimension(780, 470));
+        Panel_Punto_Venta.setToolTipText("");
+        Panel_Punto_Venta.setPreferredSize(new java.awt.Dimension(816, 470));
         Panel_Punto_Venta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPuntodeVenta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -53,16 +54,17 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         txtPuntodeVenta.setText("Punto de Venta ");
         Panel_Punto_Venta.add(txtPuntodeVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
-        btnNuevo.setBackground(new java.awt.Color(204, 204, 204));
-        btnNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3643762-find-glass-magnifying-search-zoom_113420.png"))); // NOI18N
-        btnNuevo.setText("Buscar");
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setBackground(new java.awt.Color(204, 204, 204));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add_circle_create_expand_new_plus_icon_123218.png"))); // NOI18N
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
-        Panel_Punto_Venta.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 110, 30));
+        Panel_Punto_Venta.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 150, 30));
+        btnAgregar.getAccessibleContext().setAccessibleDescription("");
 
         btnGenerarVenta.setBackground(new java.awt.Color(204, 204, 204));
         btnGenerarVenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -73,7 +75,7 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
                 btnGenerarVentaActionPerformed(evt);
             }
         });
-        Panel_Punto_Venta.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 170, 30));
+        Panel_Punto_Venta.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 170, 30));
 
         txtTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtTotal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/total.png"))); // NOI18N
@@ -123,7 +125,7 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         });
         Panel_Punto_Venta.add(txtid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPuntoVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -135,14 +137,14 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tablaPuntoVenta);
 
         Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
 
@@ -150,27 +152,21 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         btnNuevo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnNuevo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/nuevo.png"))); // NOI18N
         btnNuevo1.setText("Nuevo");
-        Panel_Punto_Venta.add(btnNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, 30));
+        Panel_Punto_Venta.add(btnNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Panel_Punto_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -196,9 +192,9 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtid3ActionPerformed
 
-    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevoActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,11 +233,11 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel Panel_Punto_Venta;
+    public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnGenerarVenta;
-    public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnNuevo1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable tablaPuntoVenta;
     public javax.swing.JLabel txtIdProducto1;
     public javax.swing.JLabel txtPuntodeVenta;
     public javax.swing.JLabel txtTotal;

@@ -7,7 +7,9 @@ package controlador;
 import javax.swing.JOptionPane;
 import modelo.Login;
 import vista.VistaDashBoardAdmin;
+import vista.Vista_PuntoVenta;
 import vista.VistaLogin;
+
 
 /**
  *
@@ -58,10 +60,10 @@ public class ControladorVistaLogin {
             this.vista.dispose();
         }else if(this.modelo.validarLogin() && this.modelo.getRolUsuario().getTipoRolUsuario().equals("cajero")){
             //JOptionPane.showMessageDialog(vista, "Usuario y/o Password incorrectos");
- //Crear objeto de la vista DashBoardAdmin
-            ControladorDashBoardAdmin vistaDashBoardAdmin =new ControladorDashBoardAdmin();
-            vistaDashBoardAdmin.getVista().setVisible(true);
-            vistaDashBoardAdmin.getVista().setLocationRelativeTo(null);
+ //Crear objeto de la vista PuntoVenta
+            ControladorPuntoVenta controladorVenta = new ControladorPuntoVenta();
+            controladorVenta.getVista().setVisible(true);
+            controladorVenta.getVista().setLocationRelativeTo(null);
             
             //Ocultar la vista de Login
             this.vista.dispose();

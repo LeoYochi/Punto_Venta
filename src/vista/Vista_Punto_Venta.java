@@ -40,8 +40,8 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         txtid1 = new javax.swing.JTextField();
         txtid2 = new javax.swing.JTextField();
         txtid3 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaProducto = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,7 +120,7 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
         });
         Panel_Punto_Venta.add(txtid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -128,20 +128,20 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio", "Total"
+                "Nombre del Producto", "Precio", "Cantidad", "Categoria"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaProducto);
 
-        Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
+        Panel_Punto_Venta.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 390, 360));
 
         getContentPane().add(Panel_Punto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -195,10 +195,10 @@ public class Vista_Punto_Venta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel Panel_Punto_Venta;
+    public javax.swing.JTable TablaProducto;
     public javax.swing.JButton btnGenerarVenta;
     public javax.swing.JButton btnNuevo;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel txtIdProducto1;
     public javax.swing.JLabel txtPuntodeVenta;
     public javax.swing.JLabel txtTotal;

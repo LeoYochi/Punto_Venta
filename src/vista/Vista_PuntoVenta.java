@@ -31,13 +31,13 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnGenerarVenta = new javax.swing.JButton();
         txtTotal = new javax.swing.JLabel();
-        txtid = new javax.swing.JTextField();
+        txtTotal1 = new javax.swing.JTextField();
         txtIdProducto1 = new javax.swing.JLabel();
         txtsubtotal = new javax.swing.JLabel();
         txtiva = new javax.swing.JLabel();
         txtid1 = new javax.swing.JTextField();
-        txtid2 = new javax.swing.JTextField();
-        txtid3 = new javax.swing.JTextField();
+        txtSubtotal = new javax.swing.JTextField();
+        txtIva = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaPuntoVenta = new javax.swing.JTable();
         btnNuevo1 = new javax.swing.JButton();
@@ -82,12 +82,12 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         txtTotal.setText("Total:");
         Panel_Punto_Venta.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
 
-        txtid.addActionListener(new java.awt.event.ActionListener() {
+        txtTotal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidActionPerformed(evt);
+                txtTotal1ActionPerformed(evt);
             }
         });
-        Panel_Punto_Venta.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 220, 30));
+        Panel_Punto_Venta.add(txtTotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 220, 30));
 
         txtIdProducto1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtIdProducto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/idp1.png"))); // NOI18N
@@ -111,19 +111,19 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         });
         Panel_Punto_Venta.add(txtid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 220, 30));
 
-        txtid2.addActionListener(new java.awt.event.ActionListener() {
+        txtSubtotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtid2ActionPerformed(evt);
+                txtSubtotalActionPerformed(evt);
             }
         });
-        Panel_Punto_Venta.add(txtid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 220, 30));
+        Panel_Punto_Venta.add(txtSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 220, 30));
 
-        txtid3.addActionListener(new java.awt.event.ActionListener() {
+        txtIva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtid3ActionPerformed(evt);
+                txtIvaActionPerformed(evt);
             }
         });
-        Panel_Punto_Venta.add(txtid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
+        Panel_Punto_Venta.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 220, 30));
 
         tablaPuntoVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -176,21 +176,21 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarVentaActionPerformed
 
-    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
+    private void txtTotal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotal1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidActionPerformed
+    }//GEN-LAST:event_txtTotal1ActionPerformed
 
     private void txtid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtid1ActionPerformed
 
-    private void txtid2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid2ActionPerformed
+    private void txtSubtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSubtotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtid2ActionPerformed
+    }//GEN-LAST:event_txtSubtotalActionPerformed
 
-    private void txtid3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid3ActionPerformed
+    private void txtIvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIvaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtid3ActionPerformed
+    }//GEN-LAST:event_txtIvaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
@@ -239,12 +239,12 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable tablaPuntoVenta;
     public javax.swing.JLabel txtIdProducto1;
+    public javax.swing.JTextField txtIva;
     public javax.swing.JLabel txtPuntodeVenta;
+    public javax.swing.JTextField txtSubtotal;
     public javax.swing.JLabel txtTotal;
-    public javax.swing.JTextField txtid;
+    public javax.swing.JTextField txtTotal1;
     public javax.swing.JTextField txtid1;
-    public javax.swing.JTextField txtid2;
-    public javax.swing.JTextField txtid3;
     public javax.swing.JLabel txtiva;
     public javax.swing.JLabel txtsubtotal;
     // End of variables declaration//GEN-END:variables

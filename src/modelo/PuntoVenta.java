@@ -73,7 +73,7 @@ public class PuntoVenta extends ConexionBD implements CRUDinterface {
                 //JOptionPane.showMessageDialog(null, super.getMensajes());
 
                 //Llamar el procedimiento alamacenado
-                this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscar_PuntoVenta();");
+                this.cstmt = super.getConexion().prepareCall("");
 
                 //ejecutar consulta
                 this.result = this.cstmt.executeQuery();
@@ -107,6 +107,42 @@ public class PuntoVenta extends ConexionBD implements CRUDinterface {
         return listaPuntoVenta;
     }
 
+    
+
+    
+public PuntoVenta buscarPorId(String idProducto) {
+    PuntoVenta producto = null;
+
+    if (!super.openConexionBD()) {
+        JOptionPane.showMessageDialog(null, super.getMensajes());
+        return null;
+    }
+
+    try {
+        this.cstmt = super.getConexion().prepareCall("call BaseDeMySQL.sp_buscarId_PuntoVenta(?);");
+        // tu procedimiento espera int
+        this.cstmt.setInt(1, Integer.parseInt(idProducto));
+        this.result = this.cstmt.executeQuery();
+
+        if (this.result.next()) {
+            producto = new PuntoVenta();
+            // Usar índices como en tu método buscar() para evitar errores de nombre de columna
+            producto.NombreProducto = this.result.getString(2);
+            producto.Precio = this.result.getString(3); // puede ser null desde BD
+            producto.cantidad = this.result.getString(4);
+        }
+
+        this.cstmt.close();
+        super.getConexion().close();
+    } catch (SQLException | NumberFormatException ex) {
+        super.setMensajes(ex.getMessage());
+        JOptionPane.showMessageDialog(null, "Error en buscarPorId: " + ex.getMessage());
+    }
+
+    return producto;
+}
+
+
     @Override
     public boolean insertar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -126,5 +162,6 @@ public class PuntoVenta extends ConexionBD implements CRUDinterface {
     public boolean eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-      
+
+  
 }

@@ -49,14 +49,78 @@ public class ControladorPuntoVenta {
         //evento para el boton para buscar
         this.vista.btnAgregar.addActionListener(e -> agregarProducto());
         //evento para el boton para Nuevo
-        this.vista.btnNuevo1.addActionListener(e -> nuevoProductoVenta());
+        this.vista.btnNuevo2.addActionListener(e -> nuevoProductoVenta());
         //evento para generar ticket
         this.vista.btnGenerarVenta.addActionListener(e -> generarTicket());
+        //evento para descartar producto
+        this.vista.btnDescartar.addActionListener(e -> descartarProducto()); 
 
-       
 
     
     }
+    
+
+// Método para descartar producto de la tabla (sin afectar BD)
+private void descartarProducto() {
+    try {
+        String idTexto = vista.txtid1.getText().trim();
+
+        if (idTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(vista, "Por favor ingrese el ID del producto a descartar.");
+            return;
+        }
+
+        DefaultTableModel modeloTabla = (DefaultTableModel) vista.tablaPuntoVenta.getModel();
+        boolean encontrado = false;
+
+        for (int i = 0; i < modeloTabla.getRowCount(); i++) {
+            String nombreProducto = modeloTabla.getValueAt(i, 0).toString();
+            
+            // Si en vez del nombre usas el ID en la tabla, cámbialo por el índice correcto
+            if (nombreProducto.equalsIgnoreCase(idTexto)) {
+                modeloTabla.removeRow(i);
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            recalcularTotales();
+            JOptionPane.showMessageDialog(vista, "Producto descartado de la tabla.");
+        } else {
+            JOptionPane.showMessageDialog(vista, "No se encontró un producto con ese ID en la tabla.");
+        }
+
+        vista.txtid1.setText("");
+        vista.txtid1.requestFocus();
+
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(vista, "Error al descartar producto: " + ex.getMessage());
+    }
+}
+
+// Método para recalcular subtotal, IVA y total
+private void recalcularTotales() {
+    DefaultTableModel modeloTabla = (DefaultTableModel) vista.tablaPuntoVenta.getModel();
+    subtotal = 0.0;
+
+    for (int i = 0; i < modeloTabla.getRowCount(); i++) {
+        String precioStr = modeloTabla.getValueAt(i, 1).toString().replace("$", "").replace(",", "").trim();
+        String cantidadStr = modeloTabla.getValueAt(i, 2).toString();
+
+        double precio = Double.parseDouble(precioStr);
+        int cantidad = Integer.parseInt(cantidadStr);
+
+        subtotal += precio * cantidad;
+    }
+
+    double iva = subtotal * IVA_PORCENTAJE;
+    double total = subtotal + iva;
+
+    vista.txtSubtotal.setText(String.format(Locale.US, "%.2f", subtotal));
+    vista.txtIva.setText(String.format(Locale.US, "%.2f", iva));
+    vista.txtTotal1.setText(String.format(Locale.US, "%.2f", total));
+}
     
    private void agregarProducto() {
     try {

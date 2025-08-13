@@ -40,7 +40,8 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
         txtIva = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaPuntoVenta = new javax.swing.JTable();
-        btnNuevo1 = new javax.swing.JButton();
+        btnDescartar = new javax.swing.JButton();
+        btnNuevo2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,11 +149,17 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
 
         Panel_Punto_Venta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 400, 320));
 
-        btnNuevo1.setBackground(new java.awt.Color(204, 204, 204));
-        btnNuevo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnNuevo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/nuevo.png"))); // NOI18N
-        btnNuevo1.setText("Nuevo");
-        Panel_Punto_Venta.add(btnNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, 30));
+        btnDescartar.setBackground(new java.awt.Color(204, 204, 204));
+        btnDescartar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDescartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/trash_delete_remove_icon_143675.png"))); // NOI18N
+        btnDescartar.setText("Descartar");
+        Panel_Punto_Venta.add(btnDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, 30));
+
+        btnNuevo2.setBackground(new java.awt.Color(204, 204, 204));
+        btnNuevo2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnNuevo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/nuevo.png"))); // NOI18N
+        btnNuevo2.setText("Nuevo");
+        Panel_Punto_Venta.add(btnNuevo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,8 +241,9 @@ public class Vista_PuntoVenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel Panel_Punto_Venta;
     public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnDescartar;
     public javax.swing.JButton btnGenerarVenta;
-    public javax.swing.JButton btnNuevo1;
+    public javax.swing.JButton btnNuevo2;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable tablaPuntoVenta;
     public javax.swing.JLabel txtIdProducto1;
